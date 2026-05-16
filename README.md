@@ -23,3 +23,8 @@ This repository contains fundamental experiments in quantum computing using Qisk
 ## Objective
 
 This repository documents my learning journey in quantum computing and quantum algorithms.
+
+## Theoretical Connections
+
+- [VQE and Machine Learning](docs/vqe_ml_connection.md)
+- [VQE and Cryptography](docs/vqe_crypto_connection.md)

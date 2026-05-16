@@ -1,4 +1,6 @@
-from qiskit import QuantumCircuit, Aer, execute
+from qiskit import QuantumCircuit
+from qiskit_aer import Aer
+from qiskit import transpile
 from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
 
@@ -12,8 +14,10 @@ qc.h(0)
 qc.measure(0, 0)
 
 # Simulator
-simulator = Aer.get_backend('qasm_simulator')
-result = execute(qc, simulator, shots=1000).result()
+simulator = Aer.get_backend('aer_simulator')
+qc = transpile(qc, simulator)
+
+result = simulator.run(qc, shots=1000).result()
 counts = result.get_counts()
 
 print(counts)
